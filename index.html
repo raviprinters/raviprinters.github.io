@@ -1,0 +1,143 @@
+<head>
+	<title>Ravi Printers</title>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<style>
+h1
+{
+	text-align: center;
+	font-size-adjust: 0.5;
+}
+
+body
+{
+	background-color:   #000000  ;
+}
+
+.address
+{
+  border: 5px outset red;
+  background-color: lightblue;
+  text-align: center;
+  font-family: Comic Sans MS
+}
+
+.order
+{
+	border: 5px outset red;
+	background-color: lightblue;
+	font-size: 20px;
+	font-family: Comic Sans MS;
+	//text-align: center;
+
+}
+
+.image
+{
+	display: block;
+	width=10%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+	height: 300px;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+select:invalid{
+	color: gray;
+}
+option{
+	color:black;
+}
+
+</style>
+
+<body>
+	
+	<h1 style="font-family: Courier New; color: #000000; background-color:  #FFC300  " >
+	RAVI PRINTERS
+	<h3 style="text-align: center; font-family: Courier New; color: #000000; background-color:  #FFC300;">
+	We print with something other than ink....Quality
+	</h3>
+	</h1>
+	<h2 style=" text-align:center; color: lightblue; font-family: Brush Script MT; font-size: 32px"> Satisfying Customers for over 50 years ....</h2>
+<div class="address">
+	<h4 style="font-">450, East main Street, Thanjavur - 613009</h4>
+	<h5>CONTACT : +91 9842777569, +91 9842797694</h5>
+	<h5>E-MAIL : raviprinterstnj@gmail.com</h5>
+</div>
+
+<img src="https://www.strictlytoolboxes.com/pub/media/site/content/TUTORIAL/WHAT%20HAPPENS%20NEXT/placeorder.png" class="image">
+<h2 style="color:white; font-family: Comic Sans MS">Place your order by entering the details</h2>
+<div class="order">
+	<form id="submit-form" action="">
+		<b><label for="Name"> Name: </label></b>
+		<br>
+		<input type="text" name="Name" placeholder="Enter your name..."  ><br>
+		<br>
+		<b><label for="Mobile"> Mobile No. :</label></b>
+		<br>
+		<input type="tel" name="Mobile" maxlength="10" placeholder="Enter your mobile number...">
+		<br>
+		<br>
+		<b><label for="What">Item :</label><b>
+		<br>
+		<select required>
+			<option value="">Select what you want...</option>
+			<option value="billbook">Bill Book</option>
+			<option value="invitation">Invitation</option>
+			<option value="stamp">Stamp</option>
+			<option value="notice">Notice</option>
+			<option value="flex">Flex</option>
+			<option value="card">Visiting card</option>
+			<option value="record">Record Note</option>
+			<option value="material">Print materials</option>
+			<option value="binding">Binding</option>
+		</select>
+		<br>
+		<br>
+		<b><label for="Quantity">Quantity:</label><b>
+		<br>
+		<input type="text" name="Quantity" placeholder="Enter Quantity">
+		<br>
+		<br>
+		<b><label for="Desc"> Description: </label><b>
+		<br>
+		<input type="text" name="Desc" placeholder="Requirements such as colour, size and other preferences." style= "width: 450px; height: 200px"; >
+		<br>
+		<br>
+		<input type="submit" value="Place Order" style="background-color: green; color:white; width: 150; height: 35;">
+	</form>
+</div>
+      <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbxuzpUXZlOGqW9vlA_mP6Zx3l4Uwioy4gP0lMY-ILzUHOXVczw/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Your order has been Placed :) ")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>	
+</body>
+
+//https://script.google.com/macros/s/AKfycby8XRuuh4Qe3neZzZ0C1Vhzw04MkuNMBJJjkLsm/exec
